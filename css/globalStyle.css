@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oxanium", sans-serif;
+}
+
+body{
+    background: linear-gradient(to bottom, #6ab7f5, #ffffff);
+    text-align: center;
+    min-height: 100vh;
+}
+
+
+/* ----- Menu NAV ------- */
+
+
+.img-logo{
+    width: 10%;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 30%;
+}
+
+a{
+    text-decoration: none;
+    background-color: #ffffff;
+    padding: 15%;
+    border-radius: 8px;
+    box-shadow: -3px 4px 0 #a8a5a5;
+    cursor: pointer;
+}
+
+a:hover{
+    opacity: 0.8;
+}
+
+
+.menu-toggle {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  display: none; /* Escondido por padrão */
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none; /* some o menu */
+    flex-direction: column;
+    background: #e63946;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .menu.active {
+    display: flex; /* aparece quando clicar */
+  }
+
+  .menu-toggle {
+    display: block; /* mostra os risquinhos */
+  }
+}

@@ -1,0 +1,22 @@
+.menu-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35%;
+    
+}
+
+
+
+main{
+    margin-top: 5%;
+}
+
+
+.texto-sobre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 30%;
+    margin-top: 5%;
+}
