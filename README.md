@@ -1,31 +1,31 @@
-# 🛡️ Pokédex Web
+# 🔴 Pokédex - Explore o Mundo Pokémon
 
-Uma Pokédex feita com **HTML, CSS e JavaScript**, onde você pode visualizar e explorar informações dos Pokémon como nome, tipos, habilidades, imagens e estatísticas.
+![Preview do Projeto](https://github.com/Carlosrafael426/Pokedex/blob/main/images/Print.png)
 
-Esse projeto foi criado como prática de front-end e para demonstrar uso de DOM, responsividade e lógica em JavaScript.
+> Pokédex interativa que consome a PokeAPI para exibir informações dos Pokémons.
 
----
-
-## 🚀 Funcionalidades
-
-✨ Lista de Pokémon  
-📊 Detalhes ao clicar no Pokémon  
-📱 Responsivo (menu que vira ícone em telas menores)  
-🎨 Estilo inspirado no visual da Pokédex
+🔗 **[Acesse o projeto online](https://pokemon-pokedexx.netlify.app/)**
 
 ---
 
-## 🧠 Tecnologias usadas
+## 🎯 Sobre o Projeto
 
-Esse projeto foi feito com:
-
-✔️ HTML  
-✔️ CSS  
-✔️ JavaScript  
-
-(sem frameworks ou bibliotecas externas)
+Uma Pokédex completa e interativa desenvolvida Html, CSS e JS. O projeto consome a PokeAPI para buscar dados dos Pokémons em tempo real, permitindo pesquisar e visualizar informações detalhadas de cada criatura.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 🛠️ Tecnologias Utilizadas
 
+<div>
+
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+</div>
+
+---
+
+## ✨ Funcionalidades
+
+- 🔍 Buscar Pokémons por nome
+
+- 📋 Listar Pokémons com paginação
