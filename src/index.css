@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-type-normal: #A8A77A;
+  --color-type-fire: #EE8130;
+  --color-type-water: #6390F0;
+  --color-type-electric: #F7D02C;
+  --color-type-grass: #7AC74C;
+  --color-type-ice: #96D9D6;
+  --color-type-fighting: #C22E28;
+  --color-type-poison: #A33EA1;
+  --color-type-ground: #E2BF65;
+  --color-type-flying: #A98FF3;
+  --color-type-psychic: #F95587;
+  --color-type-bug: #A6B91A;
+  --color-type-rock: #B6A136;
+  --color-type-ghost: #735797;
+  --color-type-dragon: #6F35FC;
+  --color-type-dark: #705746;
+  --color-type-steel: #B7B7CE;
+  --color-type-fairy: #D685AD;
+}
+
+/* Tratativa para classes dinâmicas no Tailwind v4 */
+.bg-type-normal { background-color: color-mix(in srgb, var(--color-type-normal) 80%, transparent); }
+.bg-type-fire { background-color: color-mix(in srgb, var(--color-type-fire) 80%, transparent); }
+.bg-type-water { background-color: color-mix(in srgb, var(--color-type-water) 80%, transparent); }
+.bg-type-electric { background-color: color-mix(in srgb, var(--color-type-electric) 80%, transparent); }
+.bg-type-grass { background-color: color-mix(in srgb, var(--color-type-grass) 80%, transparent); }
+.bg-type-ice { background-color: color-mix(in srgb, var(--color-type-ice) 80%, transparent); }
+.bg-type-fighting { background-color: color-mix(in srgb, var(--color-type-fighting) 80%, transparent); }
+.bg-type-poison { background-color: color-mix(in srgb, var(--color-type-poison) 80%, transparent); }
+.bg-type-ground { background-color: color-mix(in srgb, var(--color-type-ground) 80%, transparent); }
+.bg-type-flying { background-color: color-mix(in srgb, var(--color-type-flying) 80%, transparent); }
+.bg-type-psychic { background-color: color-mix(in srgb, var(--color-type-psychic) 80%, transparent); }
+.bg-type-bug { background-color: color-mix(in srgb, var(--color-type-bug) 80%, transparent); }
+.bg-type-rock { background-color: color-mix(in srgb, var(--color-type-rock) 80%, transparent); }
+.bg-type-ghost { background-color: color-mix(in srgb, var(--color-type-ghost) 80%, transparent); }
+.bg-type-dragon { background-color: color-mix(in srgb, var(--color-type-dragon) 80%, transparent); }
+.bg-type-dark { background-color: color-mix(in srgb, var(--color-type-dark) 80%, transparent); }
+.bg-type-steel { background-color: color-mix(in srgb, var(--color-type-steel) 80%, transparent); }
+.bg-type-fairy { background-color: color-mix(in srgb, var(--color-type-fairy) 80%, transparent); }
+
+@utility glass {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.1); border-radius: 10px; }
