@@ -118,47 +118,56 @@ export const PokemonDetailsModal: React.FC<PokemonDetailsModalProps> = ({ pokemo
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: "100%", opacity: 0 }}
           transition={{ type: "spring", damping: 25, stiffness: 200 }}
-          className={`bg-type-${mainType} w-full sm:max-w-md md:max-w-lg h-[90vh] sm:h-[80vh] rounded-t-[3rem] sm:rounded-3xl overflow-hidden shadow-2xl relative flex flex-col`}
+          style={{ backgroundColor: `var(--color-type-${mainType}, #A8A77A)` }}
+          className="w-full max-w-md max-h-[95vh] sm:max-h-[85vh] rounded-t-[3rem] sm:rounded-3xl overflow-hidden shadow-2xl relative flex flex-col"
           onClick={e => e.stopPropagation()}
         >
-          <button onClick={onClose} className="absolute top-6 right-6 text-white z-50 bg-white/20 p-2 rounded-full backdrop-blur-md hover:bg-white/40 transition">
+          {/* Botão Fechar */}
+          <button onClick={onClose} className="absolute top-5 right-5 sm:top-6 sm:right-6 text-white z-50 bg-black/10 p-2 rounded-full backdrop-blur-md hover:bg-black/20 transition cursor-pointer">
             <X size={24} />
           </button>
           
-          <div className="p-8 pb-4 relative flex flex-col items-center justify-center min-h-[280px]">
-            <div className="absolute top-6 left-8">
-              <div className="text-white text-4xl font-black capitalize tracking-wider drop-shadow-md">
-                {details.name}
+          {/* Header Colorido */}
+          <div className="px-6 pt-8 sm:pt-10 pb-2 relative flex flex-col items-center">
+            {/* Título e Tipos */}
+            <div className="w-full flex justify-between items-start mb-2 sm:mb-6">
+              <div className="flex-1">
+                <h2 className="text-white text-3xl sm:text-4xl font-black capitalize tracking-wider drop-shadow-md">
+                  {details.name}
+                </h2>
+                <div className="flex gap-2 mt-3">
+                  {details.types.map((t: any) => (
+                    <span key={t.type.name} className="px-3 py-1 bg-white/30 backdrop-blur-md rounded-full text-xs font-bold text-white lowercase shadow-sm border border-white/20">
+                      {typeTranslations[t.type.name] || t.type.name}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className="flex gap-2 mt-3">
-                {details.types.map((t: any) => (
-                  <span key={t.type.name} className="px-4 py-1.5 bg-white/30 backdrop-blur-md rounded-full text-sm font-bold text-white lowercase shadow-sm border border-white/20">
-                    {typeTranslations[t.type.name] || t.type.name}
-                  </span>
-                ))}
+              
+              {/* ID Pokémon */}
+              <div className="text-white/60 text-xl sm:text-2xl font-black pt-1 pr-12 sm:pr-14">
+                 #{String(details.id).padStart(3, '0')}
               </div>
             </div>
             
-            <div className="absolute top-6 right-20 text-white/30 text-2xl font-black z-0">
-               #{String(details.id).padStart(3, '0')}
-            </div>
-            
+            {/* Imagem Puxada para baixo */}
             <motion.img 
               initial={{ scale: 0, rotate: -20 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.1 }}
               src={imageUrl} 
               alt={details.name} 
-              className="w-56 h-56 object-contain absolute -bottom-12 z-20 drop-shadow-2xl"
+              className="w-48 h-48 sm:w-56 sm:h-56 object-contain relative z-20 drop-shadow-2xl -mb-16 sm:-mb-24"
             />
           </div>
           
-          <div className="bg-white flex-1 rounded-t-[3rem] p-8 pt-16 relative shadow-[0_-10px_20px_rgba(0,0,0,0.1)] flex flex-col">
-            <div className="flex justify-around border-b border-gray-100 pb-4 mb-6 relative z-30">
+          {/* Container Branco Inferior */}
+          <div className="bg-white flex-1 min-h-0 rounded-t-[3rem] px-6 sm:px-8 pt-20 sm:pt-28 pb-6 relative shadow-[0_-10px_20px_rgba(0,0,0,0.1)] flex flex-col z-10 w-full overflow-hidden">
+            <div className="flex justify-between sm:justify-around border-b border-gray-100 pb-3 mb-5 relative z-30">
               {['sobre', 'status base', 'evolução'].map(tab => (
                 <button 
                   key={tab}
-                  className={`capitalize font-bold pb-2 transition-all duration-300 relative ${activeTab === tab ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'}`}
+                  className={`capitalize font-bold pb-2 transition-all duration-300 text-sm sm:text-base relative ${activeTab === tab ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'}`}
                   onClick={() => setActiveTab(tab)}
                 >
                   {tab}
@@ -169,7 +178,7 @@ export const PokemonDetailsModal: React.FC<PokemonDetailsModalProps> = ({ pokemo
               ))}
             </div>
             
-            <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar relative z-30">
+            <div className="flex-1 overflow-y-auto min-h-0 pr-1 sm:pr-2 custom-scrollbar relative z-30 scroll-smooth overscroll-contain">
               {activeTab === 'sobre' && (
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
                   <p className="text-gray-600 leading-relaxed text-center px-2 font-medium">
@@ -195,7 +204,7 @@ export const PokemonDetailsModal: React.FC<PokemonDetailsModalProps> = ({ pokemo
                       <ShieldAlert className="text-gray-400 mt-1" size={20} />
                       <div className="w-full">
                         <div className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-2">Habilidades</div>
-                        <div className="text-gray-800 font-semibold lowercase flex flex-wrap gap-2">
+                        <div className="text-gray-800 font-semibold lowercase flex flex-wrap gap-1.5">
                           {translatedAbilities.map((ab: string, idx: number) => (
                             <span key={idx} className="px-3 py-1 bg-gray-100 rounded-lg text-sm">
                               {ab}
